@@ -3,7 +3,18 @@ body {
   line-height: 1.5;
 }
 
-/* Utility */
+.container {
+  width: 1110px;
+}
+
+
+/* === test === */
+/* .header > * {
+  border: 1px solid #000;
+} */
+
+
+/* === Utility === */
 .text-white {
   color: #FFF;
 }
@@ -12,20 +23,17 @@ body {
   color: #650300;
 }
 
-.container {
-  width: 1110px;
-}
 
-.header > * {
-  border: 1px solid #000;
-}
-
+/* === header === */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 30px 88px;
   background-color: #AA0601;
+}
+
+.header .content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo a {
@@ -34,6 +42,7 @@ body {
   width: 80px;
   height: 49px;
 
+  /* 圖片取代文字: 但文字不顯示在頁面但 HTML 依舊存在 */
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
@@ -45,12 +54,9 @@ body {
   justify-content: space-between;
 }
 
-.menu li {
-  border: 1px solid #000;
-}
-
 .menu li a {
   display: block;
-  padding: 9px 0 10px 0; /* 讓可點擊的高度可以與 logo 一樣高 */
   text-decoration: none;
+  line-height: 49px; /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
+  padding: 0 10px; /* 點擊範圍左右擴大一點 */
 }

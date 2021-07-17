@@ -5,6 +5,7 @@ body {
 
 .container {
   width: 1110px;
+  margin: 0 auto;
 }
 
 
@@ -21,6 +22,14 @@ body {
 
 .text-primary {
   color: #650300;
+}
+
+.h2 {
+  font-size: 48px;
+}
+
+.h3 {
+  font-size: 24px;
 }
 
 
@@ -59,4 +68,25 @@ body {
   text-decoration: none;
   line-height: 49px; /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
   padding: 0 10px; /* 點擊範圍左右擴大一點 */
+}
+
+
+/* === banner === */
+.banner {
+  background: url("../images/banner.png") center center;
+  background-size: cover;
+  height: 840px;
+
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+
+.sub-slogan {
+  font-size: 36px;
+}
+
+.slogan {
+  font-size: 64px;
+  font-weight: bold;
 }

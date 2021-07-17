@@ -1,0 +1,56 @@
+body {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Utility */
+.text-white {
+  color: #FFF;
+}
+
+.text-primary {
+  color: #650300;
+}
+
+.container {
+  width: 1110px;
+}
+
+.header > * {
+  border: 1px solid #000;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 88px;
+  background-color: #AA0601;
+}
+
+.logo a {
+  display: block;
+  background: url("../images/logo.png");
+  width: 80px;
+  height: 49px;
+
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.menu {
+  width: 512px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu li {
+  border: 1px solid #000;
+}
+
+.menu li a {
+  display: block;
+  padding: 9px 0 10px 0; /* 讓可點擊的高度可以與 logo 一樣高 */
+  text-decoration: none;
+}

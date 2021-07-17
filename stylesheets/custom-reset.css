@@ -1,0 +1,11 @@
+/* rwd img css，可當作是 CSS Reset 其中一個 */
+img, video {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle; /* 會比 display: block 更合適，因有時候圖片不需要 block */
+}
+
+/* 全域 border box */
+*,*::before,*::after {
+	box-sizing: border-box;
+}

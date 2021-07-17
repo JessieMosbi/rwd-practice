@@ -24,12 +24,18 @@ body {
   color: #650300;
 }
 
+.description {
+  font-size: 16px;
+}
+
 .h2 {
   font-size: 48px;
+  font-weight: bold;
 }
 
 .h3 {
   font-size: 24px;
+  font-weight: bold;
 }
 
 
@@ -89,4 +95,34 @@ body {
 .slogan {
   font-size: 64px;
   font-weight: bold;
+}
+
+
+/* === brief === */
+.brief {
+  background: #AA06010D;
+  padding: 60px 0 80px 0;
+  text-align: center;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48px;
+}
+
+.services .h3 {
+  margin-top: 24px;
+}
+
+.services img {
+  height: 83px;
+  width: 100%; /* 以父層的 100% 作為寬度 */
+  object-fit: contain; /* 為防止圖片變形，圖片完整且剛好放進去框框裡 */
+}
+
+.services p {
+  width: 255px;
+  margin-top: 8px;
+  text-align: justify;
 }

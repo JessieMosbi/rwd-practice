@@ -75,13 +75,13 @@ body {
   overflow: hidden;
 }
 
-.menu {
+.header .menu {
   width: 512px;
   display: flex;
   justify-content: space-between;
 }
 
-.menu li a {
+.header .menu li a {
   display: block;
   text-decoration: none;
   line-height: 49px; /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
@@ -310,4 +310,105 @@ body {
   display: block;
   padding: 16px 143px;
   margin: 40px auto 0 auto;
+}
+
+
+/* === footer === */
+.footer {
+  padding: 32px 0 39px 0;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-top .media {
+  width: 208px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-top .menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-top .menu li {
+  margin-right: 48px;
+}
+
+.footer-top .menu a {
+  display: block;
+  text-decoration: none;
+}
+
+.icon {
+  display: block;
+}
+
+.facebook {
+  background: url("../images/icon-fb.svg");
+  width: 48px;
+  height: 48px;
+}
+
+.instagram {
+  background: url("../images/icon-ig.svg");
+  width: 48px;
+  height: 48px;
+}
+
+.line {
+  background: url("../images/icon-line.svg");
+  width: 48px;
+  height: 48px;
+}
+
+.footer-main {
+  margin-top: 36px;
+}
+
+.contact-us {
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 24px;
+}
+
+.contact-us li {
+  display: flex;
+  align-items: center;
+}
+
+.icon.phone {
+  background: url("../images/icon-phone.svg");
+  width: 36px;
+  height: 36px;
+  margin-right: 32px;
+}
+
+.icon.mail {
+  background: url("../images/icon-mail.svg");
+  width: 48px;
+  height: 48px;
+  margin-right: 20px;
+}
+
+.footer-foot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.rules {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 14px;
+}
+
+.rules li {
+  margin-left: 48px;
+}
+
+.copyright {
+  font-size: 16px;
 }

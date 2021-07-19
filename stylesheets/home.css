@@ -205,6 +205,8 @@ body {
 .co-branded .products li {
   width: 49%;
   /* width: calc((100% - 30px)/2); */
+  background: #FFF;
+  position: relative;
 }
 
 .co-branded .products a {
@@ -220,7 +222,19 @@ body {
   text-decoration: none;
 
   /* FIXME: 兩張圖還要刷淡！但文字會跟著變淡欸！ */
-  /* opacity: 0.7; */
+  opacity: 0.7;
+  /* z-index: 1; */
+}
+
+.co-branded .products p {
+  /* FIXME: 這邊還不太懂 */
+  font-size: 72px;
+  width: 100%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 位移置中物件自身寬與高的 50% */
 }
 
 .co-branded .brand-1 a {

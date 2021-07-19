@@ -4,8 +4,10 @@ body {
 }
 
 .container {
-  width: 1110px;
+  max-width: 1110px;
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 
@@ -93,9 +95,13 @@ body {
 }
 
 .header .menu {
-  width: 512px;
+  /* width: 512px; */
   display: flex;
   justify-content: space-between;
+}
+
+.header .menu li:nth-child(-n+3) {
+  margin-right: 64px;
 }
 
 .header .menu li a {
@@ -136,6 +142,7 @@ body {
 .services {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .services img {
@@ -192,15 +199,22 @@ body {
 .co-branded .products {
   display: flex;
   justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+
+.co-branded .products li {
+  width: 49%;
+  /* width: calc((100% - 30px)/2); */
 }
 
 .co-branded .products a {
-  display: block;
-  width: 540px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 455px;
   background-size: cover; /* 圖片大於要放的框 */
 
-  line-height: 455px; /* 垂直置中 */
+  line-height: 455px;
   font-size: 72px;
   font-weight: bold;
   text-decoration: none;
@@ -231,10 +245,14 @@ body {
 .cards {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  /* align-content: space-between; */
 }
 
 .cards li {
-  width: calc((100% - 90px)/4); /* 扣掉 padding 總和 90 後除 4 */
+  /* width: calc((100% - 90px)/4); */ /* 扣掉 padding 總和 90 後除 4 */
+  width: 24%;
+  max-width: 255px;
   height: 460px;
   border: 1px solid #DEE2E6;
   box-shadow: 0px 2px 6px #00000029;
@@ -278,7 +296,8 @@ body {
 }
 
 .contact .container {
-  width: 730px;
+  width: 58%;
+  max-width: 730px;
   margin: 0 auto;
 }
 
@@ -301,9 +320,10 @@ body {
 
 .contact button {
   display: block;
-  padding: 16px 143px;
+  padding: 16px 0;
   margin-left: auto;
   margin-right: auto;
+  width: 50%;
 }
 
 
@@ -339,24 +359,21 @@ body {
 
 .icon {
   display: block;
+  width: 48px;
+  height: 48px;
+  background-size: 48px 48px; /* 也要給，這樣 svg 長寬才能正確顯示 */
 }
 
 .facebook {
   background: url("../images/icon-fb.svg");
-  width: 48px;
-  height: 48px;
 }
 
 .instagram {
   background: url("../images/icon-ig.svg");
-  width: 48px;
-  height: 48px;
 }
 
 .line {
   background: url("../images/icon-line.svg");
-  width: 48px;
-  height: 48px;
 }
 
 .footer-main {
@@ -404,4 +421,41 @@ body {
 
 .copyright {
   font-size: 16px;
+}
+
+
+/* === RWD === */
+@media (max-width: 992px) {
+  .container {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  .product-sunglasses {
+    flex-direction: row;
+  }
+
+  .product-sunglasses img {
+    margin-left: 0;
+  }
+
+  .co-branded .products a {
+    height: 278px;
+    line-height: 278px;
+  }
+
+  .cards li {
+    width: 49%;
+    max-width: 330px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+  }
+}
+
+@media (max-width: 767px) {
+
 }

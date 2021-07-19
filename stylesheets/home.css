@@ -204,3 +204,59 @@ body {
 .co-branded .brand-2 a {
   background: url("../images/product-9.png") center center;
 }
+
+
+/* === recommendations === */
+.recommendations {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.recommendations .h2 {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.cards li {
+  width: calc((100% - 90px)/4); /* 扣掉 padding 總和 90 後除 4 */
+  height: 460px;
+  border: 1px solid #DEE2E6;
+  box-shadow: 0px 2px 6px #00000029;
+}
+
+.cards img {
+  height: 256px;
+  object-fit: cover; /* 保持圖片比並裁剪至適合的大小中 */
+}
+
+.cards-content {
+  height: calc(100% - 256px); /* 扣掉上面 img 剩下的 */
+  padding: 16px;
+}
+
+.cards-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cards-content .name {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.cards-content .comment {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.cards-content .date {
+  font-size: 14px;
+  line-height: 21px;
+  color: #707070;
+}

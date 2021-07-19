@@ -166,3 +166,41 @@ body {
 .product-sunglasses img {
   margin-left: 30px;
 }
+
+/* === co-branded === */
+.co-branded {
+  background: url("../images/bg.png") center center;
+  margin-top: 80px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.co-branded .products {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.co-branded .products a {
+  display: block;
+  width: 540px;
+  height: 455px;
+  background-size: cover; /* 圖片大於要放的框 */
+
+  line-height: 455px; /* 垂直置中 */
+  font-size: 72px;
+  font-weight: bold;
+  text-decoration: none;
+
+  /* FIXME: 兩張圖還要刷淡！但文字會跟著變淡欸！ */
+  /* opacity: 0.7; */
+}
+
+.co-branded .brand-1 a {
+  background: url("../images/product-8.png") center center;
+}
+
+.co-branded .brand-2 a {
+  background: url("../images/product-9.png") center center;
+}

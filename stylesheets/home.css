@@ -76,7 +76,7 @@ body {
   padding: 30px 88px;
 }
 
-.header .content {
+.header .content-box {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -88,7 +88,7 @@ body {
   width: 80px;
   height: 49px;
 
-  /* 圖片取代文字: 但文字不顯示在頁面但 HTML 依舊存在 */
+  /* 圖片取代文字: 文字不顯示在頁面但實際上依舊存在 */
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
@@ -100,6 +100,7 @@ body {
   justify-content: space-between;
 }
 
+/* FIXME: 這樣會較好效能，建議用 class */
 .header .menu li:nth-child(-n+3) {
   margin-right: 64px;
 }
@@ -108,7 +109,7 @@ body {
   display: block;
   text-decoration: none;
   line-height: 49px; /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
-  padding: 0 10px; /* 點擊範圍左右擴大一點 */
+  /* padding: 0 10px;*/ /* 點擊範圍左右擴大一點 */
 }
 
 
@@ -118,9 +119,16 @@ body {
   background-size: cover;
   height: 840px;
 
+  /* FIXME: 為什麼 banner 下了 flex 後，container 就會縮到 p 的大小 */
+  /* display: flex; */
+}
+
+.banner .container {
+  height: 100%;
   display: flex;
-  align-items: center;
-  text-align: right;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .sub-slogan {
@@ -135,14 +143,21 @@ body {
 
 /* === brief === */
 .brief {
-  padding: 60px 0 80px 0;
+  padding-top: 60px;
+  padding-bottom: 80px;
   text-align: center;
 }
 
+/* FIXME: 要怎麼針對有 wrap 的第二行之後，設定 margin-top？ */
 .services {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+.services .h3 {
+  margin-top: 48px;
 }
 
 .services img {
@@ -154,7 +169,9 @@ body {
 .services p {
   width: 255px;
   text-align: justify;
+  margin-top: 8px;
 }
+
 
 /* === classic ===*/
 .classic {
@@ -166,17 +183,49 @@ body {
   margin-top: 60px;
 }
 
+.classic .products {
+  margin-top: 40px;
+}
+
 .classic li {
   display: flex;
   align-items: center;
 }
 
 .classic img {
+  /* FIXME: 為什麼這邊設寬 635、高 320，跟在 img width height 顯示起來不一樣？ 而且我只能設 width，高要用 auto 才會正常 */
   margin-right: 30px;
+  width: 635px;
+  height: auto;
 }
 
-.classic .products h2 {
+.classic .products .h2 {
   font-style: italic;
+  white-space: nowrap; /* 文字不換行 */
+}
+
+.classic .products .icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px; /* 也要給，這樣 svg 長寬才能正確顯示 */
+  margin-right: 10px;
+}
+
+.diamond {
+  background: url("../images/icon-diamond.svg");
+}
+
+.sun {
+  background: url("../images/icon-sun.svg");
+}
+
+.thunder {
+  background: url("../images/icon-thunder.svg");
+}
+
+.product-sunglasses, .product-functional {
+  margin-top: 32px;
 }
 
 .product-sunglasses {
@@ -186,6 +235,7 @@ body {
 .product-sunglasses img {
   margin-left: 30px;
 }
+
 
 /* === co-branded === */
 .co-branded {
@@ -200,6 +250,7 @@ body {
   display: flex;
   justify-content: space-between;
   /* flex-wrap: wrap; */
+  margin-top: 40px;
 }
 
 .co-branded .products li {
@@ -217,7 +268,7 @@ body {
   background-size: cover; /* 圖片大於要放的框 */
 
   line-height: 455px;
-  font-size: 72px;
+  /* font-size: 72px; */
   font-weight: bold;
   text-decoration: none;
 
@@ -341,6 +392,7 @@ body {
 }
 
 
+/* TODO: 7/20 at here */
 /* === footer === */
 .footer {
   padding: 32px 0 39px 0;
@@ -440,9 +492,53 @@ body {
 
 /* === RWD === */
 @media (max-width: 992px) {
+  .h2 {
+    font-size: 32px;
+  }
+
+  /* TODO */
   .container {
     padding-left: 39px;
     padding-right: 39px;
+  }
+
+  /* === header === */
+  .header {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  .header .menu li:nth-child(-n+3) {
+    margin-right: 40px;
+  }
+
+
+  /* === banner === */
+  .banner {
+    background: url("../images/banner-sm.png") left top;
+    background-size: cover;
+  }
+
+  .sub-slogan {
+    font-size: 20px;
+  }
+
+  .slogan {
+    font-size: 48px;
+  }
+
+  /* === brief === */
+
+
+  /* === classic === */
+  .classic img {
+    /* margin-right: 30px; */
+    width: 390px;
+    height: auto;
+  }
+
+  .classic .products .h2 {
+    font-size: 28px;
   }
 
   .product-sunglasses {
@@ -453,9 +549,22 @@ body {
     margin-left: 0;
   }
 
+
+  /* === co-branded === */
   .co-branded .products a {
     height: 278px;
     line-height: 278px;
+  }
+
+  .co-branded .products p {
+    font-size: 32px;
+  }
+
+
+  /* === recommendations === */
+  /* FIXME: 跟 brief 一樣，需要指定 flex-wrap 第二排後的 mt */
+  .cards {
+    justify-content: space-evenly;
   }
 
   .cards li {
@@ -463,13 +572,151 @@ body {
     max-width: 330px;
   }
 
+
+  /* === contact === */
+  .contact .container {
+    width: 75%;
+  }
+
+
+  /* === footer === */
   .icon {
     width: 24px;
     height: 24px;
     background-size: 24px 24px;
+    vertical-align: middle;
   }
 }
 
 @media (max-width: 767px) {
+  .h2 {
+    font-size: 24px;
+  }
 
+  /* TODO */
+  .container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  /* === header === */
+  .header {
+    padding: 0 0;
+  }
+
+  .header .content-box {
+    flex-direction: column;
+  }
+
+  .logo a {
+    width: 48px;
+    height: 29px;
+    background-size: 48px 29px; /* 因與原 svg 大小不一樣，故要給 */
+    margin: 10px auto 10px auto;
+  }
+
+  .header .menu {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .header .menu li {
+    width: 50%;
+    padding: 8px 0px;
+    border: 1px solid #FFF;
+  }
+
+  .header .menu li:nth-child(-n+3) {
+    margin-right: 0;
+  }
+
+
+  /* === banner === */
+  .sub-slogan {
+    font-size: 16px;
+  }
+
+  .slogan {
+    font-size: 32px;
+  }
+
+
+  /* === brief === */
+  .services {
+    justify-content: center;
+  }
+
+
+  /* === classic ===*/
+  .classic .container > .h2 {
+    margin-top: 32px;
+  }
+
+  .classic .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .classic li {
+    position: relative;
+  }
+
+  .classic img {
+    margin-right: 0;
+  }
+
+  .classic .products .h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 位移置中物件自身寬與高的 50% */
+  }
+
+
+  /* === co-branded === */
+  .co-branded {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+
+  .co-branded .products {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .co-branded .products li {
+    width: 100%;
+  }
+
+  .co-branded .products a {
+    height: 278px;
+    line-height: 278px;
+  }
+
+  .co-branded .products p {
+    font-size: 32px;
+  }
+
+  .co-branded .brand-2 {
+    margin-top: 16px;
+  }
+
+
+  /* === recommendations === */
+  /* FIXME: 跟 brief 一樣，需要指定 flex-wrap 第二排後的 mt */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards li {
+    width: 100%;
+  }
+
+
+  /* === contact === */
+  .contact .container {
+    width: 100%;
+  }
 }

@@ -100,7 +100,7 @@ body {
   justify-content: space-between;
 }
 
-/* FIXME: 這樣會較好效能，建議用 class */
+/* FIXME: 這樣會較耗效能，建議用 class */
 .header .menu li:nth-child(-n+3) {
   margin-right: 64px;
 }
@@ -148,12 +148,12 @@ body {
   text-align: center;
 }
 
-/* FIXME: 要怎麼針對有 wrap 的第二行之後，設定 margin-top？ */
 .services {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 48px;
+  row-gap: 44px; /* 每行距離 */
 }
 
 .services .h3 {
@@ -312,6 +312,8 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   /* align-content: space-between; */
+  margin-top: 40px;
+  row-gap: 40px; /* 每行距離 */
 }
 
 .cards li {
@@ -346,6 +348,7 @@ body {
 
 .cards-content .comment {
   font-size: 16px;
+  margin-top: 8px;
 }
 
 .cards-content .date {
@@ -374,25 +377,45 @@ body {
   text-align: center;
 }
 
+.contact p {
+  margin-top: 24px;
+}
+
 .form-text {
   display: flex;
   flex-direction: column;
+  margin-top: 16px;
 }
 
 .form-text input {
   height: 50px;
 }
 
+.form-text input, textarea {
+  background-color: transparent;
+  border: 1px solid #000;
+}
+
+.form-check {
+  display: flex;
+  margin-top: 16px;
+}
+
+.form-check input {
+  margin-right: 4px;
+}
+
 .contact button {
   display: block;
-  padding: 16px 0;
+  padding: 16px 143px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  margin-top: 40px;
+  border: none;
+  font-size: 16px;
 }
 
 
-/* TODO: 7/20 at here */
 /* === footer === */
 .footer {
   padding: 32px 0 39px 0;
@@ -403,19 +426,14 @@ body {
   justify-content: space-between;
 }
 
-.footer-top .media {
-  width: 208px;
-  display: flex;
-  justify-content: space-between;
-}
-
 .footer-top .menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.footer-top .menu li {
-  margin-right: 48px;
+.footer-top .menu li:not(:first-child) {
+  margin-left: 48px;
 }
 
 .footer-top .menu a {
@@ -423,11 +441,21 @@ body {
   text-decoration: none;
 }
 
+.footer-top .media {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* FIXME: 沒有垂直置中 */
 .icon {
   display: block;
   width: 48px;
   height: 48px;
   background-size: 48px 48px; /* 也要給，這樣 svg 長寬才能正確顯示 */
+}
+
+.facebook, .instagram {
+  margin-right: 32px;
 }
 
 .facebook {
@@ -447,7 +475,7 @@ body {
 }
 
 .contact-us {
-  border-bottom: 1px solid #FFF;
+  font-size: 36px;
   padding-bottom: 24px;
 }
 
@@ -456,23 +484,26 @@ body {
   align-items: center;
 }
 
-.icon.phone {
-  background: url("../images/icon-phone.svg");
+.contact-us .icon {
   width: 36px;
   height: 36px;
-  margin-right: 32px;
+  margin-right: 22px;
+  background-size: 36px 36px;
 }
 
-.icon.mail {
+.phone {
+  background: url("../images/icon-phone.svg");
+}
+
+.mail {
   background: url("../images/icon-mail.svg");
-  width: 48px;
-  height: 48px;
-  margin-right: 20px;
 }
 
 .footer-foot {
   display: flex;
   justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid #FFF;
 }
 
 .rules {
@@ -562,9 +593,9 @@ body {
 
 
   /* === recommendations === */
-  /* FIXME: 跟 brief 一樣，需要指定 flex-wrap 第二排後的 mt */
   .cards {
     justify-content: space-evenly;
+    row-gap: 32px; /* 每行距離 */
   }
 
   .cards li {
@@ -575,16 +606,59 @@ body {
 
   /* === contact === */
   .contact .container {
-    width: 75%;
+    width: 69%;
+  }
+
+  .contact button {
+    padding: 10px 77px;
+    margin-top: 20px;
+    font-size: 14px;
   }
 
 
   /* === footer === */
+  .footer {
+    padding: 32px 0 21px 0;
+  }
+
+  .footer-top .menu li:not(:first-child) {
+    margin-left: 40px;
+  }
+
   .icon {
     width: 24px;
     height: 24px;
     background-size: 24px 24px;
-    vertical-align: middle;
+  }
+
+  .facebook, .instagram {
+    margin-right: 24px;
+  }
+
+  .footer-main {
+    margin-top: 18px;
+  }
+
+  .contact-us {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .contact-us .icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 11px;
+    background-size: 18px 18px;
+  }
+
+  .footer-foot {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+  }
+
+  .rules {
+    margin-top: 36px;
   }
 }
 
@@ -595,8 +669,8 @@ body {
 
   /* TODO */
   .container {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   /* === header === */
@@ -644,6 +718,15 @@ body {
   /* === brief === */
   .services {
     justify-content: center;
+    row-gap: 40px; /* 每行距離 */
+  }
+
+  .services li {
+    width: 100%;
+  }
+
+  .services p {
+    margin: 8px auto 0 auto;
   }
 
 
@@ -704,10 +787,15 @@ body {
 
 
   /* === recommendations === */
-  /* FIXME: 跟 brief 一樣，需要指定 flex-wrap 第二排後的 mt */
+  .recommendations {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+
   .cards {
     flex-direction: column;
     align-items: center;
+    row-gap: 16px; /* 每行距離 */
   }
 
   .cards li {
@@ -716,7 +804,60 @@ body {
 
 
   /* === contact === */
+  .contact {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
   .contact .container {
     width: 100%;
+  }
+
+  .contact button {
+    padding: 8px 55px;
+  }
+
+
+  /* === footer === */
+  .footer {
+    padding: 24px 0;
+  }
+
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-main {
+    order: -1;
+    margin-top: 0;
+  }
+
+  .footer-top .menu {
+    display: none;
+  }
+
+  .contact-us {
+    font-size: 16px;
+    padding-bottom: 24px;
+  }
+
+  .footer-foot {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 16px;
+  }
+
+  .rules {
+    display: block;
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  .rules li {
+    margin-top: 8px;
+    margin-left: 0;
   }
 }

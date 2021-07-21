@@ -70,6 +70,28 @@ body {
   margin-top: 48px;
 }
 
+@media (max-width: 992px) {
+  .container {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  .h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .h2 {
+    font-size: 24px;
+  }
+}
+
 
 /* === header === */
 .header {
@@ -95,13 +117,11 @@ body {
 }
 
 .header .menu {
-  /* width: 512px; */
   display: flex;
   justify-content: space-between;
 }
 
-/* FIXME: 這樣會較耗效能，建議用 class */
-.header .menu li:nth-child(-n+3) {
+.link-products, .link-places, .link-blogs {
   margin-right: 64px;
 }
 
@@ -112,6 +132,49 @@ body {
   /* padding: 0 10px;*/ /* 點擊範圍左右擴大一點 */
 }
 
+@media (max-width: 992px) {
+  .header {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  .header .menu li:nth-child(-n+3) {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 0 0;
+  }
+
+  .header .content-box {
+    flex-direction: column;
+  }
+
+  .logo a {
+    width: 48px;
+    height: 29px;
+    background-size: 48px 29px; /* 因與原 svg 大小不一樣，故要給 */
+    margin: 10px auto 10px auto;
+  }
+
+  .header .menu {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .header .menu li {
+    width: 50%;
+    padding: 8px 0px;
+    border: 1px solid #FFF;
+  }
+
+  .header .menu li:nth-child(-n+3) {
+    margin-right: 0;
+  }
+}
+
 
 /* === banner === */
 .banner {
@@ -119,7 +182,7 @@ body {
   background-size: cover;
   height: 840px;
 
-  /* FIXME: 為什麼 banner 下了 flex 後，container 就會縮到 p 的大小 */
+  /* FIXME: 為什麼 banner 下了 flex 後，container 就會縮到 p 的大小？ */
   /* display: flex; */
 }
 
@@ -138,6 +201,31 @@ body {
 .slogan {
   font-size: 64px;
   font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .banner {
+    background: url("../images/banner-sm.png") left top;
+    background-size: cover;
+  }
+
+  .sub-slogan {
+    font-size: 20px;
+  }
+
+  .slogan {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sub-slogan {
+    font-size: 16px;
+  }
+
+  .slogan {
+    font-size: 32px;
+  }
 }
 
 
@@ -170,6 +258,24 @@ body {
   width: 255px;
   text-align: justify;
   margin-top: 8px;
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 767px) {
+  .services {
+    justify-content: center;
+    row-gap: 40px; /* 每行距離 */
+  }
+
+  .services li {
+    width: 100%;
+  }
+
+  .services p {
+    margin: 8px auto 0 auto;
+  }
 }
 
 
@@ -236,6 +342,53 @@ body {
   margin-left: 30px;
 }
 
+@media (max-width: 992px) {
+  .classic img {
+    /* margin-right: 30px; */
+    width: 390px;
+    height: auto;
+  }
+
+  .classic .products .h2 {
+    font-size: 28px;
+  }
+
+  .product-sunglasses {
+    flex-direction: row;
+  }
+
+  .product-sunglasses img {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .classic .container > .h2 {
+    margin-top: 32px;
+  }
+
+  .classic .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .classic li {
+    position: relative;
+  }
+
+  .classic img {
+    margin-right: 0;
+  }
+
+  .classic .products .h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 位移置中物件自身寬與高的 50% */
+  }
+}
+
 
 /* === co-branded === */
 .co-branded {
@@ -294,6 +447,46 @@ body {
 
 .co-branded .brand-2 a {
   background: url("../images/product-9.png") center center;
+}
+
+@media (max-width: 992px) {
+  .co-branded .products a {
+    height: 278px;
+    line-height: 278px;
+  }
+
+  .co-branded .products p {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .co-branded {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+
+  .co-branded .products {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .co-branded .products li {
+    width: 100%;
+  }
+
+  .co-branded .products a {
+    height: 278px;
+    line-height: 278px;
+  }
+
+  .co-branded .products p {
+    font-size: 32px;
+  }
+
+  .co-branded .brand-2 {
+    margin-top: 16px;
+  }
 }
 
 
@@ -357,6 +550,36 @@ body {
   color: #707070;
 }
 
+@media (max-width: 992px) {
+  .cards {
+    justify-content: space-evenly;
+    row-gap: 32px; /* 每行距離 */
+  }
+
+  .cards li {
+    width: 49%;
+    max-width: 330px;
+  }
+}
+
+@media (max-width: 767px) {
+  .recommendations {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px; /* 每行距離 */
+  }
+
+  .cards li {
+    width: 100%;
+  }
+}
+
+
 /* === contact === */
 .contact {
   padding-top: 60px;
@@ -413,6 +636,33 @@ body {
   margin-top: 40px;
   border: none;
   font-size: 16px;
+}
+
+@media (max-width: 992px) {
+  .contact .container {
+    width: 69%;
+  }
+
+  .contact button {
+    padding: 10px 77px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .contact .container {
+    width: 100%;
+  }
+
+  .contact button {
+    padding: 8px 55px;
+  }
 }
 
 
@@ -520,103 +770,7 @@ body {
   font-size: 16px;
 }
 
-
-/* === RWD === */
 @media (max-width: 992px) {
-  .h2 {
-    font-size: 32px;
-  }
-
-  /* TODO */
-  .container {
-    padding-left: 39px;
-    padding-right: 39px;
-  }
-
-  /* === header === */
-  .header {
-    padding-left: 39px;
-    padding-right: 39px;
-  }
-
-  .header .menu li:nth-child(-n+3) {
-    margin-right: 40px;
-  }
-
-
-  /* === banner === */
-  .banner {
-    background: url("../images/banner-sm.png") left top;
-    background-size: cover;
-  }
-
-  .sub-slogan {
-    font-size: 20px;
-  }
-
-  .slogan {
-    font-size: 48px;
-  }
-
-  /* === brief === */
-
-
-  /* === classic === */
-  .classic img {
-    /* margin-right: 30px; */
-    width: 390px;
-    height: auto;
-  }
-
-  .classic .products .h2 {
-    font-size: 28px;
-  }
-
-  .product-sunglasses {
-    flex-direction: row;
-  }
-
-  .product-sunglasses img {
-    margin-left: 0;
-  }
-
-
-  /* === co-branded === */
-  .co-branded .products a {
-    height: 278px;
-    line-height: 278px;
-  }
-
-  .co-branded .products p {
-    font-size: 32px;
-  }
-
-
-  /* === recommendations === */
-  .cards {
-    justify-content: space-evenly;
-    row-gap: 32px; /* 每行距離 */
-  }
-
-  .cards li {
-    width: 49%;
-    max-width: 330px;
-  }
-
-
-  /* === contact === */
-  .contact .container {
-    width: 69%;
-  }
-
-  .contact button {
-    padding: 10px 77px;
-    margin-top: 20px;
-    font-size: 14px;
-  }
-
-
-  /* === footer === */
   .footer {
     padding: 32px 0 21px 0;
   }
@@ -663,162 +817,6 @@ body {
 }
 
 @media (max-width: 767px) {
-  .h2 {
-    font-size: 24px;
-  }
-
-  /* TODO */
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  /* === header === */
-  .header {
-    padding: 0 0;
-  }
-
-  .header .content-box {
-    flex-direction: column;
-  }
-
-  .logo a {
-    width: 48px;
-    height: 29px;
-    background-size: 48px 29px; /* 因與原 svg 大小不一樣，故要給 */
-    margin: 10px auto 10px auto;
-  }
-
-  .header .menu {
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  .header .menu li {
-    width: 50%;
-    padding: 8px 0px;
-    border: 1px solid #FFF;
-  }
-
-  .header .menu li:nth-child(-n+3) {
-    margin-right: 0;
-  }
-
-
-  /* === banner === */
-  .sub-slogan {
-    font-size: 16px;
-  }
-
-  .slogan {
-    font-size: 32px;
-  }
-
-
-  /* === brief === */
-  .services {
-    justify-content: center;
-    row-gap: 40px; /* 每行距離 */
-  }
-
-  .services li {
-    width: 100%;
-  }
-
-  .services p {
-    margin: 8px auto 0 auto;
-  }
-
-
-  /* === classic ===*/
-  .classic .container > .h2 {
-    margin-top: 32px;
-  }
-
-  .classic .products {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .classic li {
-    position: relative;
-  }
-
-  .classic img {
-    margin-right: 0;
-  }
-
-  .classic .products .h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* 位移置中物件自身寬與高的 50% */
-  }
-
-
-  /* === co-branded === */
-  .co-branded {
-    margin-top: 40px;
-    padding-top: 32px;
-  }
-
-  .co-branded .products {
-    flex-direction: column;
-    margin-top: 20px;
-  }
-
-  .co-branded .products li {
-    width: 100%;
-  }
-
-  .co-branded .products a {
-    height: 278px;
-    line-height: 278px;
-  }
-
-  .co-branded .products p {
-    font-size: 32px;
-  }
-
-  .co-branded .brand-2 {
-    margin-top: 16px;
-  }
-
-
-  /* === recommendations === */
-  .recommendations {
-    padding-top: 32px;
-    padding-bottom: 40px;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 16px; /* 每行距離 */
-  }
-
-  .cards li {
-    width: 100%;
-  }
-
-
-  /* === contact === */
-  .contact {
-    padding-top: 30px;
-    padding-bottom: 40px;
-  }
-
-  .contact .container {
-    width: 100%;
-  }
-
-  .contact button {
-    padding: 8px 55px;
-  }
-
-
-  /* === footer === */
   .footer {
     padding: 24px 0;
   }

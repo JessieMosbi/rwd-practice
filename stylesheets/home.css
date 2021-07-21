@@ -10,6 +10,38 @@ body {
   padding-right: 15px;
 }
 
+.diamond {
+  background: url("../images/icon-diamond.svg");
+}
+
+.sun {
+  background: url("../images/icon-sun.svg");
+}
+
+.thunder {
+  background: url("../images/icon-thunder.svg");
+}
+
+.facebook {
+  background: url("../images/icon-fb.svg");
+}
+
+.instagram {
+  background: url("../images/icon-ig.svg");
+}
+
+.line {
+  background: url("../images/icon-line.svg");
+}
+
+.phone {
+  background: url("../images/icon-phone.svg");
+}
+
+.mail {
+  background: url("../images/icon-mail.svg");
+}
+
 
 /* === Utility === */
 .text-white {
@@ -46,7 +78,7 @@ body {
   font-weight: bold;
 }
 
-.mt-1 {
+/* .mt-1 {
   margin-top: 8px;
 }
 
@@ -68,7 +100,7 @@ body {
 
 .mt-6 {
   margin-top: 48px;
-}
+} */
 
 @media (max-width: 992px) {
   .container {
@@ -138,7 +170,7 @@ body {
     padding-right: 39px;
   }
 
-  .header .menu li:nth-child(-n+3) {
+  .link-products, .link-places, .link-blogs {
     margin-right: 40px;
   }
 }
@@ -170,7 +202,7 @@ body {
     border: 1px solid #FFF;
   }
 
-  .header .menu li:nth-child(-n+3) {
+  .link-products, .link-places, .link-blogs {
     margin-right: 0;
   }
 }
@@ -205,8 +237,8 @@ body {
 
 @media (max-width: 992px) {
   .banner {
-    background: url("../images/banner-sm.png") left top;
-    background-size: cover;
+    background: url("../images/banner-sm.png");
+    background-size: cover; /* FIXME: 為什麼這邊還要再下一次才有效呢？照理可以繼承上面的 */
   }
 
   .sub-slogan {
@@ -266,7 +298,7 @@ body {
 @media (max-width: 767px) {
   .services {
     justify-content: center;
-    row-gap: 40px; /* 每行距離 */
+    row-gap: 40px;
   }
 
   .services li {
@@ -299,7 +331,7 @@ body {
 }
 
 .classic img {
-  /* FIXME: 為什麼這邊設寬 635、高 320，跟在 img width height 顯示起來不一樣？ 而且我只能設 width，高要用 auto 才會正常 */
+  /* FIXME: 為什麼這邊設寬 635、高 320，跟在 HTML img width=635 height=320 顯示起來不一樣？ 而且只能設 width，高不能寫死，高要用 auto 才會正常？ */
   margin-right: 30px;
   width: 635px;
   height: auto;
@@ -314,20 +346,8 @@ body {
   display: inline-block;
   width: 32px;
   height: 32px;
-  background-size: 32px 32px; /* 也要給，這樣 svg 長寬才能正確顯示 */
+  background-size: 32px 32px; /* 因與 svg 大小不一樣，故也要給，這樣 svg 長寬才能正確顯示 */
   margin-right: 10px;
-}
-
-.diamond {
-  background: url("../images/icon-diamond.svg");
-}
-
-.sun {
-  background: url("../images/icon-sun.svg");
-}
-
-.thunder {
-  background: url("../images/icon-thunder.svg");
 }
 
 .product-sunglasses, .product-functional {
@@ -344,7 +364,6 @@ body {
 
 @media (max-width: 992px) {
   .classic img {
-    /* margin-right: 30px; */
     width: 390px;
     height: auto;
   }
@@ -382,6 +401,7 @@ body {
   }
 
   .classic .products .h2 {
+    /* FIXME: 這邊還不太懂為何要 translate */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -402,50 +422,44 @@ body {
 .co-branded .products {
   display: flex;
   justify-content: space-between;
-  /* flex-wrap: wrap; */
   margin-top: 40px;
 }
 
 .co-branded .products li {
   width: 49%;
-  /* width: calc((100% - 30px)/2); */
-  background: #FFF;
   position: relative;
+  background: #FFF;
 }
 
 .co-branded .products a {
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 455px;
   background-size: cover; /* 圖片大於要放的框 */
+  opacity: 0.7;
 
   line-height: 455px;
-  /* font-size: 72px; */
   font-weight: bold;
   text-decoration: none;
-
-  /* FIXME: 兩張圖還要刷淡！但文字會跟著變淡欸！ */
-  opacity: 0.7;
-  /* z-index: 1; */
 }
 
 .co-branded .products p {
-  /* FIXME: 這邊還不太懂 */
   font-size: 72px;
   width: 100%;
 
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* 位移置中物件自身寬與高的 50% */
+  transform: translate(-50%, -50%);
 }
 
-.co-branded .brand-1 a {
+.brand-1 a {
   background: url("../images/product-8.png") center center;
 }
 
-.co-branded .brand-2 a {
+.brand-2 a {
   background: url("../images/product-9.png") center center;
 }
 
@@ -484,7 +498,7 @@ body {
     font-size: 32px;
   }
 
-  .co-branded .brand-2 {
+  .brand-2 {
     margin-top: 16px;
   }
 }
@@ -504,13 +518,11 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* align-content: space-between; */
   margin-top: 40px;
-  row-gap: 40px; /* 每行距離 */
+  row-gap: 40px;
 }
 
 .cards li {
-  /* width: calc((100% - 90px)/4); */ /* 扣掉 padding 總和 90 後除 4 */
   width: 24%;
   max-width: 255px;
   height: 460px;
@@ -520,7 +532,7 @@ body {
 
 .cards img {
   height: 256px;
-  object-fit: cover; /* 保持圖片比並裁剪至適合的大小中 */
+  object-fit: cover; /* 保持圖片長寬比，並裁剪至適合的大小中 */
 }
 
 .cards-content {
@@ -553,7 +565,7 @@ body {
 @media (max-width: 992px) {
   .cards {
     justify-content: space-evenly;
-    row-gap: 32px; /* 每行距離 */
+    row-gap: 32px;
   }
 
   .cards li {
@@ -571,7 +583,7 @@ body {
   .cards {
     flex-direction: column;
     align-items: center;
-    row-gap: 16px; /* 每行距離 */
+    row-gap: 16px;
   }
 
   .cards li {
@@ -631,9 +643,7 @@ body {
 .contact button {
   display: block;
   padding: 16px 143px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
+  margin: 40px auto 0 auto;
   border: none;
   font-size: 16px;
 }
@@ -701,23 +711,11 @@ body {
   display: block;
   width: 48px;
   height: 48px;
-  background-size: 48px 48px; /* 也要給，這樣 svg 長寬才能正確顯示 */
+  background-size: 48px 48px;
 }
 
 .facebook, .instagram {
   margin-right: 32px;
-}
-
-.facebook {
-  background: url("../images/icon-fb.svg");
-}
-
-.instagram {
-  background: url("../images/icon-ig.svg");
-}
-
-.line {
-  background: url("../images/icon-line.svg");
 }
 
 .footer-main {
@@ -739,14 +737,6 @@ body {
   height: 36px;
   margin-right: 22px;
   background-size: 36px 36px;
-}
-
-.phone {
-  background: url("../images/icon-phone.svg");
-}
-
-.mail {
-  background: url("../images/icon-mail.svg");
 }
 
 .footer-foot {

@@ -401,11 +401,10 @@ body {
   }
 
   .classic .products .h2 {
-    /* FIXME: 這邊還不太懂為何要 translate */
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* 位移置中物件自身寬與高的 50% */
+    transform: translate(-50%, -50%); /* 位移置中物件自身寬與高的 50%，不要忘了本身文字還有高度，要大概算一下扣除！ */
   }
 }
 
@@ -706,7 +705,7 @@ body {
   justify-content: space-between;
 }
 
-/* FIXME: 沒有垂直置中 */
+/* FIXME: 請問要怎麼讓 icon 們能垂直置中呢？目前偏上，但加了 vertical-align:middle 反而沒有置中還整個偏下 */
 .icon {
   display: block;
   width: 48px;

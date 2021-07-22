@@ -731,6 +731,10 @@ body {
   align-items: center;
 }
 
+.contact-us a {
+  text-decoration: none;
+}
+
 .contact-us .icon {
   width: 36px;
   height: 36px;
@@ -753,6 +757,10 @@ body {
 
 .rules li {
   margin-left: 48px;
+}
+
+.rules a {
+  text-decoration: none;
 }
 
 .copyright {
